@@ -26,13 +26,17 @@ class ChatRoomsController < ApplicationController
 
   def show
     build_chat_client
-    response = @chat_client.get("chat_rooms/1")
+    response = @chat_client.get("chat_rooms/#{params[:id]}")
     response = JSON.parse(response.body)
     response = response["chat_room"]
     @title = response["title"]
     @messages = []
-    response["messages"].each do |message|
-      @messages << message["message"]["content"]
+    if response["messages"]
+      response["messages"].each do |message|
+        @messages << message["message"]["content"]
+      end
+    else
+      @messages = ["Empty Room"]
     end
   end
 
