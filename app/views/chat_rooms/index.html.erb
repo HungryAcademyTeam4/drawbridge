@@ -1,0 +1,16 @@
+<div class="span12">
+  <h1>These are the chat rooms</h1>
+  <table>
+    <tr>
+      <td>Room ID</td>
+      <td>Room Title</td>
+    </tr>
+    <% @chat_rooms.each do |room| %>
+      <tr>
+        <td><%= room[:id] %></td>
+        <td><%= link_to room[:title], chat_room_path[:id] %></td>
+      </tr>
+    <% end %>
+  </table>
+  <%= link_to "Create a new chat room", new_chat_room_path %>
+</div>
