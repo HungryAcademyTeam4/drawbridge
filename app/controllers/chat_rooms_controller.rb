@@ -14,12 +14,12 @@ class ChatRoomsController < ApplicationController
   def new
   end
 
-  def create(attributes)
+  def create
     build_chat_client
     post = @chat_client.post do |req|
       req.url '/chat_rooms'
       req.headers['Content-Type'] = 'application/json'
-      req.body = attributes
+      req.body = {title: params[:title]}.to_json
     end
     # redirect_to chat_rooms_path
   end
