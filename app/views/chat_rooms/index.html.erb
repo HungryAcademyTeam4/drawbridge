@@ -1,14 +1,16 @@
 <div class="span12">
-  <h1>These are the chat rooms</h1>
+  <h1>Castle <small>Chat Lobby</small></h1>
   <table>
     <tr>
       <td>Room ID</td>
       <td>Room Title</td>
+      <td>Occupants</td>
     </tr>
     <% @chat_rooms.each do |room| %>
       <tr>
         <td><%= room[:id] %></td>
         <td><%= link_to room[:title], chat_room_path(room[:id]) %></td>
+        <td>TBD</td>
       </tr>
     <% end %>
   </table>
