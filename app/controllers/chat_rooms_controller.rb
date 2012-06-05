@@ -21,7 +21,7 @@ class ChatRoomsController < ApplicationController
       req.headers['Content-Type'] = 'application/json'
       req.body = {title: params[:title]}.to_json
     end
-    # redirect_to chat_rooms_path
+    redirect_to chat_rooms_path
   end
 
   def show
