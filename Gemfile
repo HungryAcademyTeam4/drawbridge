@@ -25,6 +25,9 @@ group :test, :development do
   gem 'capybara'
 end
 
+gem 'simplecov', require: false, group: :test
+
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
