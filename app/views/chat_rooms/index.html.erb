@@ -8,7 +8,7 @@
     <% @chat_rooms.each do |room| %>
       <tr>
         <td><%= room[:id] %></td>
-        <td><%= link_to room[:title], chat_room_path[:id] %></td>
+        <td><%= link_to room[:title], chat_room_path(room[:id]) %></td>
       </tr>
     <% end %>
   </table>
