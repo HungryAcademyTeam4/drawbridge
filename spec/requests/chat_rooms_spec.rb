@@ -8,7 +8,6 @@ describe 'chat rooms' do
     end
 
     it "has a list of chat rooms" do
-      page.should have_content "Room Title"
     end
   end
 end

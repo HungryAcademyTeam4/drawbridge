@@ -1,16 +1,18 @@
 <h2>Castle Chat <small><%= @response["title"] %></h2>
-<table>
-  <tr>
-    <th>From:</td>
-    <th>Message</td>
-  </tr>
-  <% @messages.each do |message| %>
+<div id="messages" class="span8" style="background-color:#FFFFFF;">
+  <table class="table span5">
     <tr>
-      <td>TBD</td>
-      <td><%= message %></td>
+      <th>From:</td>
+      <th>Message</td>
     </tr>
-  <% end %>
-</table>
+    <% @messages.each do |message| %>
+      <tr>
+        <td>TBD</td>
+        <td><%= message %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
 <%= form_tag(messages_path, method: "post") do %>
   <%= hidden_field_tag 'chat_room_id', @response["id"] %>

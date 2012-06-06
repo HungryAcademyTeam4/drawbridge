@@ -7,10 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container-fluid">
+        <a class="brand" href="#">Conquor the Castle</a>
+        <ul class = "nav">
+          <li class="active">
+            <%= link_to "Lobby", chat_rooms_path %>
+          </li>
+          <li class="">
+            <a href="#">Dashboard</a>
+          </li>
+          <li class="">
+            <a href="#">Search</a>
+          </li>
+          <li>
+            <a href="#">Metrics</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
     <div class="row-fluid">
+      <% if logged_in? %>
 
-    <%= yield %>
+        <%= yield %>
+      <% else %>
+
+        <p>You are not currently logged in.</p>
+        <a href="http://localhost:3002/auth/google" class="btn">Login Now</a>
+      <% end %>
     
     </div>
   </div>
