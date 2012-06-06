@@ -1,8 +1,8 @@
-<h2>Castle Chat <small><%= @title %></h2>
+<h2>Castle Chat <small><%= @response["title"] %></h2>
 <table>
   <tr>
-    <td>Message from:</td>
-    <td>Message</td>
+    <th>From:</td>
+    <th>Message</td>
   </tr>
   <% @messages.each do |message| %>
     <tr>
@@ -11,3 +11,10 @@
     </tr>
   <% end %>
 </table>
+
+<%= form_tag(messages_path, method: "post") do %>
+  <%= hidden_field_tag 'chat_room_id', @response["id"] %>
+  <p><%= label_tag(:new_message) %></p>
+  <p><%= text_field_tag(:content) %></p>
+  <p><%= submit_tag("Post") %></p>
+<% end %>

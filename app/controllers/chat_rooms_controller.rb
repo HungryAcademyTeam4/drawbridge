@@ -1,5 +1,4 @@
 class ChatRoomsController < ApplicationController
-  # @chat_client = ChatbotApi::Client.new
 
   def index
     build_chat_client
@@ -19,7 +18,7 @@ class ChatRoomsController < ApplicationController
     post = @chat_client.post do |req|
       req.url '/chat_rooms'
       req.headers['Content-Type'] = 'application/json'
-      req.body = {title: params[:title]}.to_json
+      req.body = {title: params[:title], user_id: 1}.to_json
     end
     redirect_to chat_rooms_path
   end
@@ -28,11 +27,10 @@ class ChatRoomsController < ApplicationController
     build_chat_client
     response = @chat_client.get("chat_rooms/#{params[:id]}")
     response = JSON.parse(response.body)
-    response = response["chat_room"]
-    @title = response["title"]
+    @response = response["chat_room"]
     @messages = []
-    if response["messages"]
-      response["messages"].each do |message|
+    if @response["messages"]
+      @response["messages"].each do |message|
         @messages << message["message"]["content"]
       end
     else
