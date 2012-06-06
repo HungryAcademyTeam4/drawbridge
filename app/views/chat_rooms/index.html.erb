@@ -1,18 +1,22 @@
 <div class="span12">
-  <h1>Castle <small>Chat Lobby</small></h1>
+  <h2>Castle <small>Chat Lobby</small></h2>
+  <% if @chat_rooms != [] %>
   <table>
     <tr>
       <td>Room ID</td>
       <td>Room Title</td>
       <td>Occupants</td>
     </tr>
-    <% @chat_rooms.each do |room| %>
-      <tr>
-        <td><%= room[:id] %></td>
-        <td><%= link_to room[:title], chat_room_path(room[:id]) %></td>
-        <td>TBD</td>
-      </tr>
+      <% @chat_rooms.each do |room| %>
+        <tr>
+          <td><%= room[:id] %></td>
+          <td><%= link_to room[:title], chat_room_path(room[:id]) %></td>
+          <td>TBD</td>
+        </tr>
+      <% end %>
+    <% else %>
+      <p>There are no chat rooms available.</p>
     <% end %>
   </table>
-  <%= link_to "Create a new chat room", new_chat_room_path %>
+  <%= link_to "Create a new chat room", new_chat_room_path, class: "btn" %>
 </div>
