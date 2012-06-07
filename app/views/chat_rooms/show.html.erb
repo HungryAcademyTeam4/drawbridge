@@ -1,22 +1,8 @@
 <h2>Castle Chat <small><%= @response["title"] %></h2>
-<div id="messages" class="span8" style="background-color:#FFFFFF;">
-  <table class="table span5">
-    <tr>
-      <th>From:</td>
-      <th>Message</td>
-    </tr>
-    <% @messages.each do |message| %>
-      <tr>
-        <td>TBD</td>
-        <td><%= message %></td>
-      </tr>
-    <% end %>
-  </table>
+<div id="row">
+  <%= render "messages" %>
+  <%= render "user_list" %>
 </div>
-
-<%= form_tag(messages_path, method: "post") do %>
-  <%= hidden_field_tag 'chat_room_id', @response["id"] %>
-  <p><%= label_tag(:new_message) %></p>
-  <p><%= text_field_tag(:content) %></p>
-  <p><%= submit_tag("Post") %></p>
-<% end %>
+<div id="row">
+  <%= render "new_message_form" %>
+</div>

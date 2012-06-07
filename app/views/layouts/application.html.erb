@@ -34,9 +34,7 @@
 
         <%= yield %>
       <% else %>
-
-        <p>You are not currently logged in.</p>
-        <a href="http://localhost:3002/auth/google" class="btn">Login Now</a>
+        <%= render "/shared/visitor_landing" %>
       <% end %>
     
     </div>

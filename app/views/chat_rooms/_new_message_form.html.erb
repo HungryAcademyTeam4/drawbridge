@@ -1,0 +1,7 @@
+<div id="message-post" class="span12">
+  <%= form_tag(messages_path, method: "post", class: "form-inline") do %>
+    <%= hidden_field_tag 'chat_room_id', @response["id"] %>
+    <%= text_field_tag(:content) %>
+    <%= submit_tag("New Communique") %>
+  <% end %>
+</div>

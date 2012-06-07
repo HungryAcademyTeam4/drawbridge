@@ -3,5 +3,7 @@
 <%= form_tag(chat_rooms_path, method: "post") do %>
   <%= label_tag(:title, "Room Name:") %>
   <%= text_field_tag(:title) %>
+  <%= label_tag(:privacy, "Private Campaign?") %>
+  <%= check_box_tag(:privacy) %>
   <%= submit_tag("Create") %>
 <% end %>
