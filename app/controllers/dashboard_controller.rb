@@ -1,6 +1,12 @@
 class DashboardController < ApplicationController
 
   def show
-    # Get current user info from Authbot
+    @current_user = current_user
+  end
+
+  private
+
+  def current_user
+    {id: 1}
   end
 end

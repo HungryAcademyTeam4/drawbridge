@@ -1,29 +1,27 @@
-<h2>Dashboard</h2>
-
+<h2>This is your Dashboard</h2>
+<p class="lead">Monitor your Campaigns</p>
 <div class="tabbable">
   <ul class="nav nav-pills">
     <li ><a href="#alerts" data-toggle="pill">Alerts</a></li>
-    <li><a href="#search" data-toggle="pill">Search</a></li>
-    <li class="active"><a href="#metrics" data-toggle="pill">Metrics</a></li>
+    <li class="active"><a href="#search" data-toggle="pill">Search</a></li>
+    <li><a href="#metrics" data-toggle="pill">Metrics</a></li>
   </ul>
   <div class="pill-content">
     <div class="pill-pane" id="alerts">
       <p>I'm the alerts section</p>
     </div>
-    <div class="pill-pane" id="search">
-      <p>I'm the search section</p>
+    <div class="pill-pane active" id="search">
+      <%= render partial: "search/search_pane" %>
     </div>
-    <div class="pill-pane active" id="metrics">
-      <h4>Users</h4>
-      <p>There are <strong><%= total_users %> agents</strong> you can draft.</p>
-      <p>Currently, <strong><%= active_users %> agents</strong> are  discussing their missions.</p>
-      <p>In the past day, <strong><%= daily_active_users %> agents</strong> discussed their missions.</p>
-      <p>In the past week, <strong><%= weekly_active_users %> agents</strong> discussed their missions.</p>
-      <p>In the past month, <strong><%= monthly_active_users %> agents</strong> discussed their missions</p>
-
-      <h4>Campaigns</h4>
-      <p>There are <strong><%= total_public_rooms %> public campaigns</strong> and <strong><%= total_private_rooms %> private campaigns</strong> in progress. That makes <strong><%= total_rooms %> campaigns</strong> total.</p>
-      <p>Currently, agents are <strong>discussing <%= total_active_rooms %></strong> of them.</p>
+    <div class="pill-pane" id="metrics">
+      <div class="jumbotron">
+        <h3>Metrics & Statistics <small>Keep track of the things</small></h3>
+      </div>
+      <div class="row">
+        <%= render partial: "total_user_stats" %>
+        <%= render partial: "total_campaign_stats" %>
+        <%= render partial: "user_stats" %>
+      </div>
     </div>
   </div>
 </div>

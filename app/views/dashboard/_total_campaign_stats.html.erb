@@ -1,0 +1,10 @@
+<div class="span3 well">
+  <h4>Total Campaigns</h4>
+  <hr />
+  <p>There are <strong><%= total_public_rooms %> public campaigns</strong> and <strong><%= total_private_rooms %> private campaigns</strong> in progress. That makes <strong><%= total_rooms %> campaigns</strong> total.</p>
+  <p>Currently, agents are <strong>discussing <%= total_active_rooms %></strong> of them.</p>
+  <p>Your team completed <strong><%= total_completed_rooms %> campaigns</strong>.</p>
+  <p>Your team has concieded defeat on <strong><%=total_closed_rooms %> campaigns</strong>.</p>
+  <h5>Popularity</h5>
+  <p>The most active campaign is <strong><a href="#"><%= most_popular_room %></a></strong></p>
+</div>

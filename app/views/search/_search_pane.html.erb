@@ -1,0 +1,34 @@
+<header>
+  <div class="jumbotron">
+    <h3>Search</h3>
+    <p class="lead">Find a campaign. Or a conversation. The future depends on you.</p>
+  </div>
+</header>
+<div class="row">
+  <form class="form-inline span8">
+    <input type="text" class="input-medium search-query span6">
+    <button data-toggle="collapse" data-target="#search" class="btn">Search</button>
+  </form>
+  <div class="span8" id="search">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Message</th>
+          <th>Campaign</th>
+          <th>User</th>
+          <th>Date</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <% mock_dashboard_search_results.each do |result| %>
+        <tr>
+          <td><%= result[1] %></td>
+          <td><%= result[2] %></td>
+          <td><%= result[0] %></td>
+          <td><%= result[3] %></td>
+          <td><a href="#" class="btn">Visit Room</a></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
