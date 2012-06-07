@@ -4,6 +4,8 @@ Drawbridge::Application.routes.draw do
   resources :chat_rooms
   resources :messages
   resources :search
+
+  match "/dashboard" => "dashboard#show"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
