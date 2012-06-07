@@ -21,7 +21,14 @@
           </li>
           <li class="">
             <%= link_to "Search", search_index_path %>
-            <!-- <a href="#">Search</a> -->
+          </li>
+          
+          <!-- These will need to be dynamically generated! -->
+          <li class="room" style="background-color:#444444;">
+            <%= link_to [master_room_list.first[:title], "(5)"].join(" "), chat_room_path(master_room_list.first[:id]) %>
+          </li>
+          <li class="room" style="background-color:#444444;">
+            <%= link_to [master_room_list[1][:title], "(2)"].join(" "), chat_room_path(master_room_list[1][:id]) %>
           </li>
         </ul>
       </div>
