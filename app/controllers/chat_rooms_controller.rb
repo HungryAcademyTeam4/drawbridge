@@ -12,14 +12,12 @@ class ChatRoomsController < ApplicationController
     redirect_to chat_rooms_path
   end
 
-  # def create
-  #   build_chat_client
-  #   post = @chat_client.post do |req|
-  #     req.url '/chat_rooms'
-  #     req.headers['Content-Type'] = 'application/json'
-  #     req.body = {title: params[:title], user_id: 1}.to_json
-  #   end
-  #   redirect_to chat_rooms_path
+  # def show
+  #   # JQTODO: Use gem for this!
+  #   #   Question is, how do I get all messages ass. with a particular room ID?
+  #   # @chat_room = ChatRoom.find_by_id(params[:id])
+  #   @messages = Message.all
+  #   raise @messages.inspect
   # end
 
   def show
