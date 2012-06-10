@@ -1,13 +1,18 @@
 class ChatRoomsController < ApplicationController
 
+  # def index
+  #   build_chat_client
+  #   responses = JSON.parse(@chat_client.get('chat_rooms').body)
+  #   @chat_rooms = []
+  #   responses.each do |response|
+  #     @chat_rooms << {id: response["chat_room"]["id"], title: response["chat_room"]["title"]}
+  #   end
+  #   @chat_rooms
+  # end
+
   def index
-    build_chat_client
-    responses = JSON.parse(@chat_client.get('chat_rooms').body)
-    @chat_rooms = []
-    responses.each do |response|
-      @chat_rooms << {id: response["chat_room"]["id"], title: response["chat_room"]["title"]}
-    end
-    @chat_rooms
+    @chat_rooms = ChatRoom.all
+    # raise @chat_rooms.inspect
   end
 
   def new
