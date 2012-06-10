@@ -1,6 +1,7 @@
 <h2>Create a new chat room</h2>
 
 <%= form_tag(chat_rooms_path, method: "post") do %>
+  <%= hidden_field_tag(:user_id, current_user[:id]) %> 
   <%= label_tag(:title, "Room Name:") %>
   <%= text_field_tag(:title) %>
   <%= label_tag(:privacy, "Private Campaign?") %>

@@ -18,6 +18,10 @@ module ApplicationHelper
     @chat_rooms
   end
 
+  def current_user
+    { id: 1 }
+  end
+
 
     # responses = JSON.parse(@chat_client.get('chat_rooms').body)
     # @chat_rooms = []
