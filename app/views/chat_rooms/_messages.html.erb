@@ -7,13 +7,18 @@
       <h3>Message</h3>
     </div>
   </div>
-  <% @messages.each do |message| %>
+  <!-- JQTODO: This logic should be pushed into Chatbot -->
+  <% if @messages %>
+    <% @messages.each do |message| %>
+      <%= render partial: "message", locals: { message: message } %>
+    <% end %>
+  <% else %>
     <div class="row">
       <div class="span1">
-        <p>User</p>
+        <p></p>
       </div>
       <div class="span6">
-        <p><%= message %></p>
+        <p>There is no message</p>
       </div>
     </div>
   <% end %>

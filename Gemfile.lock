@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/HungryAcademyTeam4/chatbot_api.git
-  revision: fe4c888d0d94d30589b6cecb19397624ced5cd62
+  revision: 7251321411f1aaf8a09020ec7e8259dd71c37b7b
   specs:
     chatbot_api (1.0)
       faraday
