@@ -30,6 +30,11 @@
           <li class="room" style="background-color:#444444;">
             <%= link_to [master_room_list[1][:title], "(2)"].join(" "), chat_room_path(master_room_list[1][:id]) %>
           </li>
+          <% if logged_in? %>
+            <li>
+              <%= link_to "Logout", "http://localhost:3002/logout" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
