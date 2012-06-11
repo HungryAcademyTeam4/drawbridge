@@ -1,3 +1,3 @@
-class ChatRoom < ActiveRecord::Base
-  # attr_accessible :title, :body
-end
+# class ChatRoom < ActiveRecord::Base
+#   # attr_accessible :title, :body
+# end
