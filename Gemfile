@@ -8,6 +8,12 @@ gem 'rails', '3.2.5'
 gem 'sqlite3'
 gem 'json'
 gem 'faraday'
+gem 'simplecov', require: false, group: :test
+gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
+gem 'faye'
+gem 'gon'
+
 
 # Service API gems
 gem 'chatbot_api', "1.0", git: "git://github.com/HungryAcademyTeam4/chatbot_api.git"
@@ -29,11 +35,6 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
 end
-
-gem 'simplecov', require: false, group: :test
-gem 'jquery-rails'
-
-gem 'twitter-bootstrap-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
