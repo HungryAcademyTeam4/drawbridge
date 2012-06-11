@@ -7,9 +7,9 @@
 <div class="row">
   <form class="form-inline span8">
     <input type="text" class="input-medium search-query span6">
-    <button type="submit" class="btn">Search</button>
+    <input type="button" id="searchButton" value="search" class="btn"/>
   </form>
-  <div class="span8">
+  <div class="span8" id="searchResults">
     <% if @search_results %>
       <table class="table">
         <thead>

@@ -10,3 +10,8 @@ $("#search a").click (e) ->
 $("#metrics a").click (e) ->
   e.preventDefault()
   $(this).pill "show"
+
+$(document).ready ->
+  $("#searchResults").hide()
+  $("#searchButton").click ->
+    $("#searchResults").show()
