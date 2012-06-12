@@ -11,8 +11,9 @@ gem 'faraday'
 gem 'simplecov', require: false, group: :test
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
-gem 'faye'
 gem 'gon'
+gem 'faye'
+
 
 
 # Service API gems

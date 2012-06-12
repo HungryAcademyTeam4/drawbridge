@@ -5,34 +5,6 @@
   </div>
 </header>
 <div class="row">
-  <form class="form-inline span8">
-    <input type="text" class="input-medium search-query span6">
-    <input type="button" id="searchButton" value="search" class="btn"/>
-  </form>
-  <div class="span8" id="searchResults">
-    <% if @search_results %>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Message</th>
-            <th>Campaign</th>
-            <th>User</th>
-            <th>Date</th>
-            <th>&nbsp;</th>
-          </tr>
-        </thead>
-        <% @search_results.each do |result| %>
-          <tr>
-            <td><%= result[1] %></td>
-            <td><%= result[2] %></td>
-            <td><%= result[0] %></td>
-            <td><%= result[3] %></td>
-            <td><a href="#" class="btn">Visit Room</a></td>
-          </tr>
-        <% end %>
-      </table>
-    <% else %>
-      <p>There are no results. Please try a different search.</p>
-    <% end %>
-  </div>
+  <%= render partial: "search_form" %>
+  <%= render partial: "search_results" %>
 </div>

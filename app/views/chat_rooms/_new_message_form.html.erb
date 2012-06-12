@@ -1,7 +1,8 @@
 <div id="message-post" class="span12">
-  <%= form_tag(messages_path, method: "post", class: "form-inline", :remote => true) do %>
+  <%= form_tag(messages_path, method: "post", class: "form-inline", :remote => true, id: "new_message_form") do %>
     <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
-    <%= label_tag(:new_message) %>
+    <%= hidden_field_tag 'user_id', current_user[:id] %>
+    <%= hidden_field_tag 'user_name', current_user[:user_name] %>
     <%= text_field_tag(:content) %>
     <%= submit_tag("New Communique") %>
   <% end %>

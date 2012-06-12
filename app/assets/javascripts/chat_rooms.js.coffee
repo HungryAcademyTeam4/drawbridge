@@ -3,10 +3,12 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
+  $("#content").focus()
   faye = new Faye.Client("http://fallinggarden.com:9000/faye")
   faye.subscribe "/" + gon.chat_room.id, (data) ->
     console.log data
-    $("#messages").append "<div class='row new_message_box'>" + "<div class='span1'>" + "<p>" + "User" + "</div>" + "<div class='span6'>" + "<p>" + data.text + "</p>" + "</div>" + "</p>" 
+    $("#messages").append "<div class='row new_message_box'>" + "<div class='span1'>" + "<p>" + data.user_name + "</div>" + "<div class='span6'>" + "<p>" + data.content + "</p>" + "</div>" + "</p>" 
 
-  $(".new_message").live "ajax:complete", (event, xhr, status) ->
-    $(".new_message")[0].reset()
+  $("#new_message_form").live "ajax:complete", (event, xhr, status) ->
+    # console.log $("#new_message_form").reload()
+    $("#new_message_form")[0].reset()
