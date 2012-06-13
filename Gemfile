@@ -5,7 +5,12 @@ gem 'rails', '3.2.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+end
+
+gem 'mysql2'
+
 gem 'json'
 gem 'faraday'
 gem 'simplecov', require: false, group: :test
@@ -13,8 +18,6 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'gon'
 gem 'faye'
-
-
 
 # Service API gems
 gem 'chatbot_api', "1.0", git: "git://github.com/HungryAcademyTeam4/chatbot_api.git"
