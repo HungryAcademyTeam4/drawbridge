@@ -16,7 +16,9 @@ class ChatRoomsController < ApplicationController
     @chat_room = ChatRoom.find_by_id(params[:id])
     @messages = @chat_room.messages
     count = @messages.try(:count)
-    @messages = @messages[count-6..count-1]
+    if count
+      @messages = @messages[count-6..count-1]
+    end
     gon.chat_room = @chat_room
   end
 
