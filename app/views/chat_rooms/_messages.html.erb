@@ -7,7 +7,7 @@
       <h3>Message</h3>
     </div>
   </div>
-  <div class="row">
+  <div class="row adminmsg">
     <div class="span1">
       <p>Admin</p>
     </div>
@@ -15,4 +15,18 @@
       <p>Welcome to the <%= @chat_room.title %> campaign, <%= current_user[:user_name] %>. Please post your comments below. Remember they will be included in the campaign record!</p>
     </div>
   </div>
+  <% if @messages %>
+    <% @messages.each do |message| %>
+      <%= render partial: "message", locals: { message: message } %>
+    <% end %>
+  <% else %>
+    <div class="row">
+      <div class="span1">
+        <p></p>
+      </div>
+      <div class="span6">
+        <p>There are no posts in this campaign yet. Be the first!</p>
+      </div>
+    </div>
+  <% end %>
 </div>
