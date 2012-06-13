@@ -15,7 +15,7 @@ class ChatRoomsController < ApplicationController
   def show
     @chat_room = ChatRoom.find_by_id(params[:id])
     @messages = @chat_room.messages
-    count = @messages.count
+    count = @messages.try(:count)
     @messages = @messages[count-6..count-1]
     gon.chat_room = @chat_room
   end
