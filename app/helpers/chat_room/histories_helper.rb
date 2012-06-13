@@ -1,0 +1,2 @@
+module ChatRoom::HistoriesHelper
+end
