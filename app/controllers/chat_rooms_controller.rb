@@ -22,8 +22,4 @@ class ChatRoomsController < ApplicationController
 
   private
 
-  def build_chat_client
-    @chat_client = @chat_client || Faraday.new('http://localhost:3000/api/v1/')
-  end
-
 end
