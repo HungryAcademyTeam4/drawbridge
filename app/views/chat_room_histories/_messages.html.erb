@@ -1,0 +1,14 @@
+<% if @messages %>
+  <% @messages.each do |message| %>
+    <%= render partial: "chat_rooms/message", locals: { message: message } %>
+  <% end %>
+<% else %>
+  <div class="row">
+    <div class="span1">
+      <p></p>
+    </div>
+    <div class="span6">
+      <p>There is no message history for this room.</p>
+    </div>
+  </div>
+<% end %>

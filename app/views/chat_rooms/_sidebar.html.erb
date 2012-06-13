@@ -1,0 +1,18 @@
+<div class="team span4">
+  <div class="row">
+    <h3>Team Members</h3>
+  </div>
+  <div class="row">
+    <h4><a href="#">John Foo</a> <small>ONLINE</small></h4>
+    <h4><a href="#">Mary Grace Parks</a> <small>ONLINE</small></h4>
+    <h4><a href="#">Alice Winter</a></h4>
+    <h4><a href="#">James Redlowe</a></h4>
+    <h4><a href="#">Magic Johnson</a> <small>ONLINE</small></h4>
+  </div>
+  <div class="span4">
+    <%= link_to "View Chat History", chat_room_history_path(@chat_room.id), class: "btn btn-inverse" %>
+  </div>
+  <div class="span4">
+    <%= link_to "Back to Lobby", chat_rooms_path, class: "btn btn-inverse" %>
+  </div>
+</div>

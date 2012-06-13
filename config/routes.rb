@@ -4,6 +4,7 @@ Drawbridge::Application.routes.draw do
   resources :chat_rooms
   resources :messages
   resources :search
+  resource :chat_room_history
 
   match "/dashboard" => "dashboard#show"
   
