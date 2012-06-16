@@ -15,6 +15,8 @@ class ChatRoomsController < ApplicationController
   def show
     @chat_room = ChatRoom.find_by_id(params[:id])
     @messages = @chat_room.messages
+    # foo = @messages.first.created_at
+    # raise foo.class.inspect
     count = @messages.try(:count)
     if count
       @messages = @messages[count-6..count-1]
