@@ -1,20 +1,21 @@
-<table class="table">
-  <tr>
-    <td><h4>Room Title</h4></td>
-    <td><h4>Enlisted <small>Room Members</small></h4></td>
-    <td><h4>Marching <small>Members Chatting</small></h4></td>
-    <td>&nbsp;</td>
-  </tr>
-  <% @chat_rooms.each do |room| %>
+<div class="span6">
+  <table class="table table-striped">
     <tr>
-      <td><strong><%= link_to room.title, chat_room_path(room.id) %></strong></td>
-      <td><%= temp_count %></td>
-      <td><%= temp_count %></td>
-      <td>
-        <div class="btn-group">
-          <%= link_to "Strategize", chat_room_path(room.id), class: "btn btn-inverse" %>
-          <%= link_to "Close", "#", class: "btn btn-danger" %>
-      </td>
+      <td><h4>Room Title</h4></td>
+      <td><h4>Enlisted <small>Room Members</small></h4></td>
+      <td><h4>Marching <small>Members Chatting</small></h4></td>
+      <td>&nbsp;</td>
     </tr>
-  <% end %>
-</table>
+    <% @chat_rooms.each do |room| %>
+      <tr>
+        <td><strong><%= link_to room.title, chat_room_path(room.id) %></strong></td>
+        <td><%= temp_count %></td>
+        <td><%= temp_count %></td>
+        <td>
+          <div class="btn-group">
+            <%= link_to "Close", "#", class: "btn btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div> 
