@@ -1,0 +1,25 @@
+<div class="modal hide" id="historyModal">
+  <div class="modal-header">
+    <h3>Chat history for the <%= @chat_room.title %> campaign:</h3>
+    <button type="button" class="close" data-dismiss="modal">x</button>
+  </div>
+  <div class="modal-body">
+    <% if @chat_room.messages %>
+      <% @chat_room.messages.each do |message| %>
+        <%= render partial: "chat_rooms/message", locals: { message: message } %>
+      <% end %>
+    <% else %>
+      <div class="row">
+        <div class="span1">
+          <p></p>
+        </div>
+        <div class="span6">
+          <p>There is no message history for this room.</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
