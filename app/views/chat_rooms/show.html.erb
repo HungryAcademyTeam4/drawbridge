@@ -5,8 +5,6 @@
 <%= render "sidebar" %>
 <%= render "new_message_form" %>
 
-<% Message.create({chat_room_id: @chat_room.id, user_name: current_user[:user_name], introduction: true}) %>
-
 <%= render "modal_email" %>
 <%= render "modal_github" %>
 <%= render "modal_history" %>
