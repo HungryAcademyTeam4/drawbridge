@@ -4,7 +4,7 @@
 
 $ ->
   $("#content").focus()
-  faye = new Faye.Client("http://conquerapp.com:9000/faye")
+  faye = new Faye.Client("http://fallinggarden.com:9000/faye")
   faye.subscribe "/" + gon.chat_room.id, (data) ->
     console.log data
     $("#messages").append "<div class='row new_message_box'>" + "<div class='span1'>" + "<p>" + data.user_name + "</div>" + "<div class='span6'>" + "<p>" + data.content + "</p>" + "</div>" + "</p>" 
