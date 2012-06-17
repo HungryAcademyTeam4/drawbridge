@@ -3,14 +3,11 @@ Drawbridge::Application.routes.draw do
   resources :authorizations
   resources :chat_rooms
   resources :messages
-  resources :search
 
   namespace :chat_room do
     resource :history
   end
 
-  match "/dashboard" => "dashboard#show"
-  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

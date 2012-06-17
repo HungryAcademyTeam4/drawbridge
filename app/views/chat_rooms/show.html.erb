@@ -4,4 +4,36 @@
 <%= render "messages" %>
 <%= render "sidebar" %>
 <%= render "new_message_form" %>
+
 <%= Message.create({chat_room_id: @chat_room.id, user_name: current_user[:user_name], introduction: true}) %>
+
+<div class="modal hide" id="emailModal">
+  <div class="modal-header">
+    <h3>Posting to <%= @chat_room.title %> by email:</h3>
+    <button type="button" class="close" data-dismiss="modal">x</button>
+  </div>
+  <div class="modal-body">
+    <p>Send an email to</p>
+    <p class="well"><a href="mailto:conquerchat+<%= @chat_room.id %>@gmail.com">conquerchat+<%= @chat_room.id %>@gmail.com</a></p>
+    <p>Your name, the subject and body of the email will be included in the post.</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn btn-inverse" data-dismiss="modal">Close</a>
+  </div>
+</div>
+
+
+<div class="modal hide" id="githubModal">
+  <div class="modal-header">
+    <h3>Linking <%= @chat_room.title %> to a Github repo:</h3>
+    <button type="button" class="close" data-dismiss="modal">x</button>
+  </div>
+  <div class="modal-body">
+    <p>To link this chat room to a private repo you will need this Github commit hook:</p>
+    <p class="well">http://conquerapp.com/github_messages?id=<%= @chat_room.id %></p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+    <a href="#" class="btn btn-primary"> Save changes</a>
+  </div>
+</div>

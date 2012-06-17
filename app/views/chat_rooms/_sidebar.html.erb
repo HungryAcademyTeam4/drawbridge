@@ -8,10 +8,11 @@
 </div>
 <div class="span2">
   <h3>Room Information</h3>
-  <ul>
-    <li>Email Link</li>
-    <li>Github Commit Hook</li>
-    <!-- JQTODO: Add modal window here for info -->
-    <li><%= link_to "View Chat History", chat_room_history_path(@chat_room.id), class: "btn btn-inverse" %></li>
-  </ul>
+      <a class="btn btn-inverse" data-toggle="modal" href="#emailModal"><%= image_tag 'icons/mailV1.png' %><div>Post via Email</div></a>
+      <a class="btn btn-inverse" data-toggle="modal" href="#githubModal"><%= image_tag 'icons/octocatV1.png' %><div>Link to Github</div></a>
+      <%= link_to "History", chat_room_history_path(@chat_room.id), class: "btn btn-inverse" %>
+
+    <div>
+      
+    </div>
 </div>
