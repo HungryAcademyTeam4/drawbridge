@@ -1,9 +1,6 @@
-<h2>Castle Chat <small><%= @chat_room.title %></h2>
-
-<div id="row">
-  <%= render "messages" %>
-  <%= render "sidebar" %>
+<div class="row span7">
+  <h2 class="page_title"><%= @chat_room.title %> <small>Campaign</small></h2>
 </div>
-<div id="row">
-  <%= render "new_message_form" %>
-</div>
+<%= render "messages" %>
+<%= render "sidebar" %>
+<%= render "new_message_form" %>
