@@ -1,24 +1,31 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="brand" href="#">Conquer the Castle</a>
-      <ul class = "nav">
-        <% if logged_in? %>
-          <li class="active">
-            <%= link_to "Lobby", chat_rooms_path %>
-          </li>
-          <li class="">
-            <%= link_to "Dashboard", dashboard_path %>
-          </li>
-          <li class="">
-            <%= link_to "Search", search_index_path %>
-          </li>          
-          <!-- JQTODO: Add back in open tabs -->
-          <li>
-            <%= link_to "Logout", "/auth/logout" %>
-          </li>
-        <% end %>
-      </ul>
+    <div class="container">
+      <div class="offset1 span9">
+        <a class="brand" href="#">Conquer the Castle</a>
+        <ul class = "nav pull-right">
+          <% if logged_in? %>
+            <li class="divider-vertical"></li>
+            <li class="">
+              <%= link_to "Lobby", chat_rooms_path %>
+            </li>
+            <li class="divider-vertical"></li>
+            <li class="">
+              <%= link_to "Dashboard", dashboard_path %>
+            </li>
+            <li class="divider-vertical"></li>
+            <li class="">
+              <%= link_to "Search", search_index_path %>
+            </li>
+            <!-- JQTODO: Add back in open tabs -->
+            <li class="divider-vertical"></li>
+            <li>
+              <%= link_to "Logout", "/auth/logout" %>
+            </li>
+
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
