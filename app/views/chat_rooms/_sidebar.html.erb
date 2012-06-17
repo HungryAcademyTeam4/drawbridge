@@ -1,19 +1,17 @@
-<div class="team span4">
-  <div class="row well span2">
-    <h3>Team Members</h3>
-    <h4><a href="#">John Foo</a> <small>ONLINE</small></h4>
-    <h4><a href="#">Mary Grace Parks</a> <small>ONLINE</small></h4>
-    <h4><a href="#">Alice Winter</a></h4>
-    <h4><a href="#">James Redlowe</a></h4>
-    <h4><a href="#">Magic Johnson</a> <small>ONLINE</small></h4>
-  </div>
-  <div class="span2">
-    <h3>Room Information</h3>
-    <ul>
-      <li>Email Link</li>
-      <li>Github Commit Hook</li>
-      <!-- JQTODO: Add modal window here for info -->
-      <li><%= link_to "View Chat History", chat_room_history_path(@chat_room.id), class: "btn btn-inverse" %></li>
-    </ul>
-  </div>
+<div class="row well span2">
+  <h3>Team Members</h3>
+  <h4><a href="#">John Foo</a> <small>ONLINE</small></h4>
+  <h4><a href="#">Mary Grace Parks</a> <small>ONLINE</small></h4>
+  <h4><a href="#">Alice Winter</a></h4>
+  <h4><a href="#">James Redlowe</a></h4>
+  <h4><a href="#">Magic Johnson</a> <small>ONLINE</small></h4>
+</div>
+<div class="span2">
+  <h3>Room Information</h3>
+  <ul>
+    <li>Email Link</li>
+    <li>Github Commit Hook</li>
+    <!-- JQTODO: Add modal window here for info -->
+    <li><%= link_to "View Chat History", chat_room_history_path(@chat_room.id), class: "btn btn-inverse" %></li>
+  </ul>
 </div>
