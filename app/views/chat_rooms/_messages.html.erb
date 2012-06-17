@@ -12,18 +12,20 @@
       <p>Welcome to the <%= @chat_room.title %> campaign, <%= current_user[:user_name] %>. Please post your comments below. Remember they will be included in the campaign record!</p>
     </div>
   </div>
-  <% if @messages %>
-    <% @messages.each do |message| %>
-      <%= render partial: "message", locals: { message: message } %>
+  <div style="height:300px; overflow:scroll;">
+    <% if @messages %>
+      <% @messages.each do |message| %>
+        <%= render partial: "message", locals: { message: message } %>
+      <% end %>
+    <% else %>
+      <div class="row">
+        <div class="span1">
+          <p></p>
+        </div>
+        <div class="span4">
+          <p>There are no posts in this campaign yet. Be the first!</p>
+        </div>
+      </div>
     <% end %>
-  <% else %>
-    <div class="row">
-      <div class="span1">
-        <p></p>
-      </div>
-      <div class="span4">
-        <p>There are no posts in this campaign yet. Be the first!</p>
-      </div>
-    </div>
-  <% end %>
+  </div>
 </div>
