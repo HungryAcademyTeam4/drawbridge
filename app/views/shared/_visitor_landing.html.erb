@@ -1,17 +1,21 @@
 <div class="span8">
   <header class="jumbotron">
-    <h1>Castle</h1>
-    <p class="lead">Plan your next technological campaign.</p>
+    <h1>Castle<small> Conquer your app</small><%= link_to "Login Now", '/auth/google', class: "btn btn-danger pull-right", :confirm => "Your domain must be on the whitelist to log in. Please use your @hungrymachine.com email to log in." %></h1>
   </header>
-  <hr />
   <div class="row">
-    <div class="span4">
-      <p>Welcome to Castle, the way to conquer your next app.</p>
-      <p>Castle is the definitive record of your app from start to finish. It keeps track of commits to your Github repo and any discussions between your team in an easy-to-read log that any team member can access.</p>
+    <div class="span8">
+      <p class="teaser">Castle keeps the definitive record of your application's development from inception to completion.<br />From Github commits to conversations among your team, everything is saved in an easy-to-read log for future reference.</p>
     </div>
-    <div class="well span3">
-      <p>You are not currently logged in.</p>
-      <a href="/auth/google" class="btn btn-info">Login Now</a>
+    <div class="span4">
+      <h3>Security</h3>
+      <p>With Castle, you own the server - no third party. All data is stored on your system, entirely in your control. You decide who can come over the drawbridge.</p>
+    </div>
+    <div class="span4">
+      <h3>Modularity</h3>
+      <p>Castle is designed to grow with you. It works for companies with just one app and for large firms handling thousands of services in a single page load.</p>
+    </div>
+    <div class="offset2 span8" style="margin-top:1em;">
+      <h2><span style="text-align:center; color:#9b0000;">Get Castle. Conquer your app.</span></h2>
     </div>
   </class>
 </div>
