@@ -1,20 +1,10 @@
-<div class="span7 row">
-  <h2 class="page_title">Castle <small>All Campaigns</small></h2>
+<div class="span8">
+  <h2 class="page_title">Castle <small>All Campaigns</small><%= link_to "Create a new chat room", new_chat_room_path, class: "btn btn-inverse pull-right" %></h2>
+  
 </div>
+  
 <% if @chat_rooms != [] %>
   <%= render partial: "chat_room_list" %>
 <% else %>
   <p>There are no chat rooms available.</p>
 <% end %>
-<div class="row">
-  <div class="span3">
-    <%= link_to "Create a new chat room", new_chat_room_path, class: "btn btn-inverse" %>
-  </div>
-  <div class="span3" style="margin-top:10px; border:1px solid #000000; padding:10px;">
-    <h3>Your Private Campaigns</h3>
-    <ul>
-      <li><a href="#">Campaign 1</a></li>
-      <li><a href="#">Campaign 2</a></li>
-      <li><a href="#">Campaign 3</a></li>
-  </div>
-</div>
