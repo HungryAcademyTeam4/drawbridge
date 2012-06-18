@@ -1,4 +1,4 @@
-<div id="messages" class="row span6">
+<div class="row span6">
   <div class="row">
     <div class="span1">
       <h3>From</h3>
@@ -12,7 +12,7 @@
       <p>Welcome to the <%= @chat_room.title %> campaign, <%= current_user[:user_name] %>. Please post your comments below. Remember they will be included in the campaign record!</p>
     </div>
   </div>
-  <div style="height:300px; overflow:scroll;">
+  <div id="messages" style="height:300px; overflow:scroll;">
     <% if @messages %>
       <% @messages.each do |message| %>
         <%= render partial: "message", locals: { message: message } %>
