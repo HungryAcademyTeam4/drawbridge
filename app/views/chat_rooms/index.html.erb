@@ -1,10 +1,22 @@
-<div class="span8">
-  <h2 class="page_title">Castle <small>All Campaigns</small><%= link_to "Create a new chat room", new_chat_room_path, class: "btn btn-inverse pull-right" %></h2>
-  
+<div class="span9 offset1 castleHead" style="">
+  &nbsp;
 </div>
-  
-<% if @chat_rooms != [] %>
-  <%= render partial: "chat_room_list" %>
-<% else %>
-  <p>There are no chat rooms available.</p>
-<% end %>
+
+<div class="offset1 span9" style="background-color:rgb(255, 255, 255); padding-bottom:20px;">
+  <% if logged_in? %>
+
+    <div class="span8">
+      <h2 class="page_title">Castle <small>All Campaigns</small><%= link_to "Create a new chat room", new_chat_room_path, class: "btn btn-inverse pull-right" %></h2>
+      
+    </div>
+      
+    <% if @chat_rooms != [] %>
+      <%= render partial: "chat_room_list" %>
+    <% else %>
+      <p>There are no chat rooms available.</p>
+    <% end %>
+  <% else %>
+    <%= render "/shared/visitor_landing" %>
+  <% end %>
+</div>
+

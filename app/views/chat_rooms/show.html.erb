@@ -1,10 +1,23 @@
-<div class="row span7">
-  <h2 class="page_title"><%= @chat_room.title %> <small>Campaign</small></h2>
+<div class="span9 offset1 castleHead" style="height:130px;background-position:top;">
+  &nbsp;
 </div>
-<%= render "messages" %>
-<%= render "sidebar" %>
-<%= render "new_message_form" %>
 
-<%= render "modal_email" %>
-<%= render "modal_github" %>
-<%= render "modal_history" %>
+<div class="offset1 span9" style="background-color:rgb(255, 255, 255); padding-bottom:20px;">
+  <% if logged_in? %>
+
+    <div class="row span7">
+      <h2 class="page_title"><%= @chat_room.title %> <small>Campaign</small></h2>
+    </div>
+    <%= render "messages" %>
+    <%= render "sidebar" %>
+    <%= render "new_message_form" %>
+
+    <%= render "modal_email" %>
+    <%= render "modal_github" %>
+    <%= render "modal_history" %>
+
+  <% else %>
+      <%= render "/shared/visitor_landing" %>
+    <% end %>
+  </div>
+</div>
