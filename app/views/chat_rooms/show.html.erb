@@ -8,16 +8,3 @@
 <%= render "modal_email" %>
 <%= render "modal_github" %>
 <%= render "modal_history" %>
-
-<%
-    url = 'http://conquerapp.com:9000/faye'
-    body = {
-       channel: "/null",
-       data: {
-         chat_room_id: @chat_room.id,
-         user_name: current_user[:user_name],
-         introduction: true
-       }
-     }
-    Net::HTTP.post_form(URI.parse(url), message: body.to_json).inspect
-%>
